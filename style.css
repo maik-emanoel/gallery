@@ -12,6 +12,7 @@
 
     font-size: 62.5%;
     font-family: 'Hepta Slab', serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -87,5 +88,34 @@ header h1 {
 @keyframes fromBottom {
     from {
         transform: translateY(100%);
+    }
+}
+
+@media (max-width: 1024px) {
+    :root {
+        font-size: 50%;
+    }
+
+    #app {
+        flex-direction: column;
+        margin-top: 10rem;
+    }
+
+    header {
+        margin-bottom: 3.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #app {
+        margin-top: 5rem;
+    }
+
+    header h1 {
+        font-size: 3.6rem;
+    }
+    
+    .img-container {
+        column-count: 2;
     }
 }
