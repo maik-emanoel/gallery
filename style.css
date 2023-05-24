@@ -48,17 +48,44 @@ header h1 {
 }
 
 .img-wrapper {
-    width: 100%;
     margin-bottom: 3.2rem;
     border-radius: .4rem;
     overflow: hidden;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.img {
+    width: 100%;
+    display: block;
 }
 
 .img-wrapper h2 {
     display: none;
 }
 
-.img {
+.img-wrapper:hover h2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
     width: 100%;
-    object-fit: cover;
+    height: 7.3rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    font-size: 2rem;
+    font-weight: 400;
+
+    padding-left: 2.4rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+    animation: fromBottom .4s backwards;
+}
+
+@keyframes fromBottom {
+    from {
+        transform: translateY(100%);
+    }
 }
