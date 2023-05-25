@@ -33,6 +33,12 @@ body {
     gap: 2rem;
 }
 
+header {
+    position: sticky;
+    top: 4rem;
+    height: fit-content;
+}
+
 header h1 {
     width: 50%;
     font-size: 4.8rem;
@@ -46,6 +52,11 @@ header h1 {
 
     columns: 3;
     column-gap: 3.2rem;
+    transition: all .3s;
+}
+
+.img-container:has(.img-wrapper:hover) .img-wrapper:not(:hover) {
+    filter: grayscale(100);
 }
 
 .img-wrapper {
@@ -103,6 +114,7 @@ header h1 {
 
     header {
         margin-bottom: 3.2rem;
+        position: static;
     }
 }
 
