@@ -57,6 +57,7 @@ header h1 {
 
 .img-container:has(.img-wrapper:hover) .img-wrapper:not(:hover) {
     filter: grayscale(100);
+    transition: all .5s ease-in-out;
 }
 
 .img-wrapper {
