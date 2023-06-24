@@ -97,6 +97,23 @@ header h1 {
     animation: fromBottom .4s backwards;
 }
 
+.img-container.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container.loading img{
+    width: 4.8rem;
+    animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes fromBottom {
     from {
         transform: translateY(100%);
