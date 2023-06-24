@@ -72,19 +72,31 @@ const imagesUrl = [
 ]
 
 const imgContainer = document.querySelector('.img-container')
+const loadingImg = '<img class="loading-img" src="./assets/loading.svg" alt="Ícone de carregamento" />'
 
 window.addEventListener('load', () => {
-    imagesUrl.map((image) => {
-        const imgWrapper = document.createElement('div')
-        const h2Wrapper = document.createElement('h2')
+    imgContainer.classList.add('loading')
+    imgContainer.innerHTML = loadingImg
 
-        imgWrapper.classList.add('img-wrapper')
-        imgWrapper.innerHTML = `<img src="${image.url}" alt="${image.alt}" class="img" />`
+    setTimeout(() => {
+        imgContainer.classList.remove('loading')
+        imagesUrl.map((image) => {
+            const imgWrapper = document.createElement('div')
+            const h2Wrapper = document.createElement('h2')
+    
+            imgWrapper.classList.add('img-wrapper')
+            imgWrapper.innerHTML = `<img src="${image.url}" alt="${image.alt}" class="img" />`
+    
+            h2Wrapper.classList.add('title-img')
+            h2Wrapper.innerHTML = `${image.title}`
+    
+            imgContainer.appendChild(imgWrapper)
+            imgWrapper.appendChild(h2Wrapper)
 
-        h2Wrapper.classList.add('title-img')
-        h2Wrapper.innerHTML = `${image.title}`
-
-        imgContainer.appendChild(imgWrapper)
-        imgWrapper.appendChild(h2Wrapper)
-    })
+            loadingElement = imgContainer.querySelector('.loading-img')
+            if(loadingElement) {
+                loadingElement.remove()
+            }
+        })
+    }, 1200)
 })
