@@ -108,6 +108,19 @@ header h1 {
     animation: loading 1.2s linear infinite;
 }
 
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--font-primary-color);
+    border-radius: 999px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 @keyframes loading {
     to {
         transform: rotate(360deg);
